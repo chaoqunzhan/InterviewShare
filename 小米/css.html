@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>水平垂直居中</title>
+</head>
+
+<style> 
+.div1{ 
+	width:400px;
+	height:300px;
+	margin:auto;
+	border:3px dotted #789;
+
+	display: flex;//flex布局
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.div2{
+	width:200px;
+	height:200px;
+	background: #789;
+	/*position: relative;*/
+/*	left:50%;
+	top:50%;
+	margin: -100px 0 0 -100px;
+	transform: translate(-50%,-50%); //未知div2的长宽*/
+}
+
+
+</style>
+<body>
+	<div class="div1">
+		<div class="div2"></div>
+	</div>
+</body>
+</html>

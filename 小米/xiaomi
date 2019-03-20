@@ -1,0 +1,133 @@
+
+1、html5语义化
+	优点
+		易于用户阅读，样式丢失的时候能让页面呈现清晰的结构；
+		有利于SEO，搜索引擎根据标签来确定上下文和各个关键字的权重；
+		方便其他设备解析，如盲人阅读器根据语义渲染网页；
+		有利于开发和维护，语义化更具可读性，代码更好维护，与CSS3关系更和谐；
+
+2、行内标签和块标签是什么？
+	块标签：<div>、<p>、<h1>…<h6>、<ol>、<ul>、<li>、<address>、<blockquote>、<form>
+	块标签特点：
+		1.行属性标签它和其它标签处在同一行内
+		2.行属性标签无法设置宽度，高度 行高 距顶部距离 距底部距离
+		3.行属性标签的宽度是直接由内部的文字或者图片等内容撑开的
+		4.行属性标签内部不能嵌套行属性标签（a链接内不能嵌套其他链接）
+
+	行内标签：<a>、<span>、<i>、<em>、<strong>、<label>、<q>、<var>、<cite>、<code>
+	行内标签特点：
+		1.每一个快属性标签都是从新的一行开始，而且之后的元素也都会从新的一行开始
+		    （因为每一个块属性标签都会直接占据一整行的内容，导致下面的内容也只能从新的一行开始）
+		2.块属性标签都是可以设置宽度、高度，行高，距顶部距离，距底部距离
+		3.块属性标签的宽度假如不做设置，会直接默认为父元素宽度的100%
+		4.块属性标签是可以直接嵌套的
+		5.p标签中不能嵌套div标签
+
+3、css3：
+	其实平时用的也不少，但不知道是css3的内容，真的冤啊；
+	box-shadow/text-shadow/border-radius等等，稍后要恶补一下。
+
+4、div水平垂直居中的实现
+	<body>
+	<div class="div1">
+		<div class="div2"></div>
+	</div>
+	</body>
+
+	1）知道父子容器宽高；
+	.div1{ 
+		width:400px;
+		height:300px;
+		border:3px dotted #789;
+	}
+	.div2{
+		width:200px;
+		height:200px;
+		background: #789;
+		margin: 50px 100px 50px 100px;
+	}
+
+	2）知道父容器宽高,不知子容器宽高；
+	.div1{ 
+		width:400px;
+		height:300px;
+		border:3px dotted #789;
+	}
+	.div2{
+		background: #789;
+		position: relative;
+		left:50%;
+		top:50%;
+		margin: -100px 0 0 -100px;
+	}
+
+	3）父子容器宽高都未知：
+	.div1{ 
+		border:3px dotted #789;
+	}
+	.div2{
+		background: #789;
+		position: relative;
+	 	left:50%;
+		top:50%;
+		transform: translate(-50%,-50%);
+	}
+
+	4）优秀的flex布局：
+	.div1{ 
+		width:400px;
+		height:300px;
+		border:3px dotted #789;
+		display: flex;//flex布局
+		justify-content: center;//子元素水平居中
+		align-items: center;//子元素垂直居中
+	}
+	.div2{
+		width:200px;
+		height:200px;
+		background: #789;
+	}
+
+
+5、position的几个属性
+	见并洗洗
+
+6、https和http的区别
+
+7、事件冒泡和事件捕获
+
+8、var变量提升
+	console.log(a);
+	var a = 1;
+	console.log(a);
+
+9、全局的函数
+	console.log(fun1);
+	console.log(fun2);
+	var fun1 = function(){}
+	fun2 = function(){}
+
+10、事件委托
+
+11、vue怎么实现双向绑定？
+
+12、data{
+		五个变量
+
+	}
+
+	用setdata只改变其中一个变量，赋值给data，实际上就改变那个变化的？？？
+
+13、vue中的v-if和v-show区别
+
+14、项目的问题，transition!!!
+
+15、页面的渲染过程
+
+16、数组的基本操作，数组的去重复；
+
+17、怎么判断变量是什么类型？函数和对象？
+
+18、优化网络，雅虎
+
+19、为什么尽量把js放在最后
