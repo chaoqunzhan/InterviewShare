@@ -1,3 +1,30 @@
+1、html5语义化
+2、行内标签和块标签是什么？
+3、css3：
+4、div水平垂直居中的实现
+5、position的几个属性
+6、事件冒泡和事件捕获、事件委托
+7、var变量提升
+8、函数变量提升
+9、数组的基本操作，数组的去重；
+10、怎么判断变量是什么类型？函数和对象？
+11、vue响应式原理和实现？
+12、data{
+		五个变量
+	}
+	用setdata只改变其中一个变量，赋值给data，实际上就改变那个变化的？？？
+13、vue中的v-if和v-show:
+14、项目的问题，transition!!!参考菜鸟教程http://www.runoob.com/css3/css3-transitions.html
+15、页面的渲染过程https://www.cnblogs.com/slly/p/6640761.html
+16、https和http的区别
+17、优化网络，雅虎
+18、为什么尽量把js放在最后
+
+
+
+
+
+
 
 1、html5语义化
 	优点
@@ -92,37 +119,8 @@
 5、position的几个属性
 	见并洗洗
 
-6、https和http的区别
 
-	HTTPS和HTTP的区别主要如下：
-
-　　1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。
-
-　　2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。
-
-　　3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。
-
-　　4、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。
-
-	客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤，如图所示。
-	
-	图
-
-　　（1）客户使用https的URL访问Web服务器，要求与Web服务器建立SSL连接。
-
-　　（2）Web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端。
-
-　　（3）客户端的浏览器与Web服务器开始协商SSL连接的安全等级，也就是信息加密的等级。
-
-　　（4）客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。
-
-　　（5）Web服务器利用自己的私钥解密出会话密钥。
-
-　　（6）Web服务器利用会话密钥加密与客户端之间的通信。
-
-
-
-7、事件冒泡和事件捕获、事件委托
+6、事件冒泡和事件捕获、事件委托
 
 	栗子：
 	<!DOCTYPE html>
@@ -183,17 +181,37 @@
 
 
 
-8、var变量提升
+7、var变量提升
 	console.log(a);     //undefined
 	var a = 1;
 	console.log(a);     //1
 
-9、全局的函数
+8、全局的函数
 	console.log(fun1);     //undefined
 	console.log(fun2);		// error:fun2 is not defined
 	var fun1 = function(){}
 	fun2 = function(){}
 
+9、数组的基本操作，数组的去重；
+
+10、怎么判断变量是什么类型？函数和对象？
+	js的变量类型：
+	基本类型：String、Number、Boolean、Symbol、Undefined、Null （存在栈里）
+	引用类型：Object、Array、Json、Function、Date、RegExp、Error （存在堆里，指针存在栈里）
+	判断方法：
+		1）typeof()：只能用来判断String、Number、Boolean、Object，其他的都是返回Object;
+		2）instanceof：运算符用来判断一个构造函数的prototype属性所指向的对象是否存在另外一个要检测对象的原型链上，简单的来说，instanceof 用于判断一个变量是否某个对象的实例。
+			栗子：obj instanceof Object;//true 实例obj在不在Object构造函数中；
+			弊端：undefined和null被检测为object,因为js中没有这种全局类型；而且都要采用 var a = new number(1) 定义才有效；
+		3）constructor：constructor是原型对象的属性指向构造函数，这种方式解决了instanceof的弊端,可以检测出除了undefined和null的9种类型，但是这种方式仍然有个弊端,就是constructor所指向的的构造函数是可以被修改的；
+		4）Object.prototype.toString.call：
+			栗子：
+			alert(Object.prototype.toString.call(“字符串”) === ‘[object String]’) //true;
+			alert(Object.prototype.toString.call(123) === ‘[object Number]’) // true;
+			alert(Object.prototype.toString.call([1,2,3]) === ‘[object Array]’) // true;
+			alert(Object.prototype.toString.call(new Date()) === ‘[object Date]’) // true;
+			alert(Object.prototype.toString.call(function a(){}) === ‘[object Function]’) / true;
+			alert(Object.prototype.toString.call({}) === ‘[object Object]’) // true;
 
 11、vue响应式原理和实现？
 	响应式：Reactivity表示一个状态改变之后，如何动态改变整个系统，在实际项目应用场景中即数据如何动态改变Dom。
@@ -218,28 +236,34 @@
 
 15、页面的渲染过程https://www.cnblogs.com/slly/p/6640761.html
 
-16、数组的基本操作，数组的去重；
+16、https和http的区别
 
-17、怎么判断变量是什么类型？函数和对象？
-	js的变量类型：
-	基本类型：String、Number、Boolean、Symbol、Undefined、Null （存在栈里）
-	引用类型：Object、Array、Json、Function、Date、RegExp、Error （存在堆里，指针存在栈里）
-	判断方法：
-		1）typeof()：只能用来判断String、Number、Boolean、Object，其他的都是返回Object;
-		2）instanceof：运算符用来判断一个构造函数的prototype属性所指向的对象是否存在另外一个要检测对象的原型链上，简单的来说，instanceof 用于判断一个变量是否某个对象的实例。
-			栗子：obj instanceof Object;//true 实例obj在不在Object构造函数中；
-			弊端：undefined和null被检测为object,因为js中没有这种全局类型；而且都要采用 var a = new number(1) 定义才有效；
-		3）constructor：constructor是原型对象的属性指向构造函数，这种方式解决了instanceof的弊端,可以检测出除了undefined和null的9种类型，但是这种方式仍然有个弊端,就是constructor所指向的的构造函数是可以被修改的；
-		4）Object.prototype.toString.call：
-			栗子：
-			alert(Object.prototype.toString.call(“字符串”) === ‘[object String]’) //true;
-			alert(Object.prototype.toString.call(123) === ‘[object Number]’) // true;
-			alert(Object.prototype.toString.call([1,2,3]) === ‘[object Array]’) // true;
-			alert(Object.prototype.toString.call(new Date()) === ‘[object Date]’) // true;
-			alert(Object.prototype.toString.call(function a(){}) === ‘[object Function]’) / true;
-			alert(Object.prototype.toString.call({}) === ‘[object Object]’) // true;
+	HTTPS和HTTP的区别主要如下：
 
+　　1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。
 
-18、优化网络，雅虎
+　　2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。
 
-19、为什么尽量把js放在最后
+　　3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。
+
+　　4、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。
+
+	客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤，如图所示。
+	
+	图
+
+　　（1）客户使用https的URL访问Web服务器，要求与Web服务器建立SSL连接。
+
+　　（2）Web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端。
+
+　　（3）客户端的浏览器与Web服务器开始协商SSL连接的安全等级，也就是信息加密的等级。
+
+　　（4）客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。
+
+　　（5）Web服务器利用自己的私钥解密出会话密钥。
+
+　　（6）Web服务器利用会话密钥加密与客户端之间的通信。
+
+17、优化网络，雅虎
+
+18、为什么尽量把js放在最后
